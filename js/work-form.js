@@ -1,5 +1,5 @@
-import { scalePicture } from './scale.js';
-
+import { scalePicture, resetScale, } from './scale.js';
+import { setDefaultEffect } from './effects.js';
 const editPhoto = document.querySelector('.img-upload__overlay');
 const closeUploadButton = editPhoto.querySelector('.img-upload__cancel');
 const changePhoto = document.querySelector('.img-upload__input');
@@ -49,9 +49,10 @@ changePhoto.addEventListener('change', () =>{
   document.body.classList.add('modal-open');
 });
 const closeForm = ()=>{
-  closeUploadButton.removeEventListener('click', closeForm);
   editPhoto.classList.add('hidden');
   document.body.classList.remove('modal-open');
+  resetScale();
+  setDefaultEffect();
 };
 closeUploadButton.addEventListener('click', closeForm);
 document.addEventListener('keydown', (evt)=>{

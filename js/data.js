@@ -1,3 +1,4 @@
+//TODO: переименовать файл в CONST.js
 const MIN_LIKES = 15;
 const MAX_LIKES = 200;
 const CANVAS_SIZE = 25;

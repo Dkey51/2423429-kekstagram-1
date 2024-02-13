@@ -61,6 +61,7 @@ const effectLevelElement = document.querySelector('.effect-level__value');
 
 const isDefault = () => chosenEffect === DEFAULT_EFFECT;
 
+
 const showSlider = () =>{
   sliderContainerElement.classList.remove('hidden');
 };
@@ -84,6 +85,12 @@ const updateSlider = () => {
   } else {
     showSlider();
   }
+};
+
+const setDefaultEffect = () => {
+  chosenEffect = DEFAULT_EFFECT;
+  imageElement.className = `effects__preview--${chosenEffect.name}`;
+  updateSlider();
 };
 
 const onEffectsChange = (evt) => {
@@ -122,4 +129,4 @@ hideSlider();
 effectsElement.addEventListener('change', onEffectsChange);
 sliderElement.noUiSlider.on('update', onSliderUpdate);
 
-export{ resetEffects };
+export{ resetEffects, setDefaultEffect };
